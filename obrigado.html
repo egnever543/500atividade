@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obrigado! — 500 Atividades Bíblicas</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --yellow:#FFD600; --orange:#FF6B00; --red:#E53935;
+  --green:#2E7D32; --green-light:#43A047; --blue:#1565C0;
+  --cream:#FFFDE7; --text:#1A1A1A; --muted:#777;
+}
+body {
+  background: var(--cream);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(255,214,0,0.2) 0%, transparent 60%);
+  text-align: center;
+}
+
+/* ── CONFETTI ── */
+.confetti-wrap {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px; height: 10px;
+  top: -20px;
+  animation: confettiFall linear infinite;
+  border-radius: 2px;
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 36px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.12);
+  border: 2px solid #f0e0b0;
+  position: relative;
+  z-index: 1;
+  animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.check-circle {
+  width: 90px; height: 90px;
+  background: linear-gradient(135deg, var(--green-light), var(--green));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 2.8rem;
+  box-shadow: 0 8px 30px rgba(46,125,50,0.35);
+  animation: bounceIn 0.7s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+@keyframes bounceIn {
+  from { opacity: 0; transform: scale(0.3); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  color: var(--blue);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+h1 span { color: var(--orange); }
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.divider { border: none; border-top: 2px dashed #f0e0a0; margin: 24px 0; }
+
+.steps { text-align: left; display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+.step {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: #fffdf0; border-radius: 12px;
+  padding: 14px 16px; border: 1.5px solid #f0e0a0;
+}
+.step-num {
+  background: var(--orange); color: #fff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem; width: 28px; height: 28px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.step-text strong { display: block; font-size: 0.95rem; color: var(--text); margin-bottom: 2px; }
+.step-text span { font-size: 0.83rem; color: var(--muted); font-weight: 700; }
+
+.support {
+  font-size: 0.82rem; color: var(--muted); font-weight: 700; margin-top: 8px;
+}
+.support a { color: var(--blue); text-decoration: none; }
+.support a:hover { text-decoration: underline; }
+
+.badge-row {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 8px; margin-top: 20px;
+}
+.badge {
+  background: #f5f5f5; border: 1.5px solid #e0e0e0;
+  border-radius: 20px; padding: 5px 14px;
+  font-size: 0.75rem; font-weight: 800; color: #555;
+}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,"script","https://connect.facebook.net/en_US/fbevents.js");
+fbq("init","973324852018195");
+fbq("track","PageView");
+fbq("track","Purchase",{content_name:"500 Atividades Bíblicas",currency:"EUR",value:9.00});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=973324852018195&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- CONFETTI -->
+<div class="confetti-wrap" id="confettiWrap"></div>
+
+<div class="card">
+  <div class="check-circle">✅</div>
+
+  <h1>Pagamento <span>confirmado!</span></h1>
+  <p class="subtitle">
+    A tua coleção de 500 Atividades Bíblicas está a caminho.<br>
+    Verifica o teu email nos próximos minutos. 📩
+  </p>
+
+  <hr class="divider">
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Verifica o teu email</strong>
+        <span>Receberás um email com o link de acesso imediato à coleção.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Faz o download dos ficheiros</strong>
+        <span>16 livros de atividades em PDF, prontos a imprimir ou usar no tablet.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Começa a brincar com a Bíblia! 🙏</strong>
+        <span>Os teus filhos vão adorar. Acesso vitalício — para sempre.</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="support">
+    Não recebeste o email? Verifica a pasta de spam ou contacta-nos:<br>
+    <a href="mailto:suporte@convertedigitais.com.br">suporte@convertedigitais.com.br</a>
+  </p>
+
+  <div class="badge-row">
+    <span class="badge">✝ 500+ Atividades</span>
+    <span class="badge">📚 16 Livros</span>
+    <span class="badge">♾️ Acesso Vitalício</span>
+    <span class="badge">🛡️ Compra Segura</span>
+  </div>
+</div>
+
+<script>
+// Gera confetti colorido
+const colors = ['#FFD600','#FF6B00','#E53935','#1565C0','#2E7D32','#7B1FA2'];
+const wrap = document.getElementById('confettiWrap');
+for (let i = 0; i < 60; i++) {
+  const el = document.createElement('div');
+  el.className = 'confetti-piece';
+  el.style.cssText = `
+    left: ${Math.random() * 100}%;
+    background: ${colors[Math.floor(Math.random() * colors.length)]};
+    width: ${6 + Math.random() * 8}px;
+    height: ${6 + Math.random() * 8}px;
+    animation-duration: ${2.5 + Math.random() * 3}s;
+    animation-delay: ${Math.random() * 3}s;
+    border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+  `;
+  wrap.appendChild(el);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finalizando pagamento...</title>
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script>
+    Paddle.Initialize({
+      token: 'live_2ba7630363eef4c3fd427c3165a',
+      checkout: {
+        settings: {
+          displayMode: "overlay",
+          theme: "light",
+          locale: "pt",
+          successUrl: "https://convertedigitais.com.br/obrigado.html"
+        }
+      }
+    });
+  </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,"script","https://connect.facebook.net/en_US/fbevents.js");
+fbq("init","973324852018195");
+fbq("track","PageView");
+fbq("track","InitiateCheckout",{content_name:"500 Atividades Bíblicas",currency:"EUR",value:9.00});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=973324852018195&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body style="margin:0; font-family: sans-serif; background: #f9f9f9;">
+  <div style="text-align:center; margin-top: 80px;">
+    <p style="color: #555; font-size: 18px;">⏳ Carregando checkout...</p>
+  </div>
+</body>
+</html>
